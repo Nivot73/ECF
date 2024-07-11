@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Film index{% endblock %}
+
+{% block body %}
+    <h1>Film index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Genre</th>
+                <th>Affiche</th>
+                <th>Description</th>
+                <th>Age</th>
+                <th>Label</th>
+                <th>Note</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for film in films %}
+            <tr>
+                <td>{{ film.id }}</td>
+                <td>{{ film.Nom }}</td>
+                <td>{{ film.Genre }}</td>
+                <td>{{ film.Affiche }}</td>
+                <td>{{ film.Description }}</td>
+                <td>{{ film.Age }}</td>
+                <td>{{ film.label ? 'Yes' : 'No' }}</td>
+                <td>{{ film.Note }}</td>
+                <td>
+                    <a href="{{ path('app_film_show', {'id': film.id}) }}">show</a>
+                    <a href="{{ path('app_film_edit', {'id': film.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_film_new') }}">Create new</a>
+{% endblock %}
