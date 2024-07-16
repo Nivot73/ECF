@@ -6,3 +6,16 @@ Commandes:
   path: /Commande
   controller: App\Controller\CommandeController::index
 
+Cinema:
+  path: /Cinema
+  controller: App\Controller\CinemaController::index
+
+Film:
+  path: /Film
+  controller: App\Controller\FilmController::index
+
+Film_Show:
+  path: /Film/{id}
+  controller: App\Controller\FilmController::show
+  requirements:
+    id: '\d+'

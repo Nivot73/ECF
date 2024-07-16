@@ -20,10 +20,10 @@
                 <td>{{ cinema.id }}</td>
                 <td>{{ cinema.Nom }}</td>
                 <td>{{ cinema.Adresse }}</td>
-                <td>
+                {# <td>
                     <a href="{{ path('app_cinema_show', {'id': cinema.id}) }}">show</a>
                     <a href="{{ path('app_cinema_edit', {'id': cinema.id}) }}">edit</a>
-                </td>
+                </td> #}
             </tr>
         {% else %}
             <tr>

@@ -15,6 +15,7 @@ class CommandeType extends AbstractType
             ->add('Prix')
             ->add('Note')
             ->add('Reservation')
+            ->add('Date')
             ->add('User')
             ->add('Seance')
         ;

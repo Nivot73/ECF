@@ -12,6 +12,7 @@
                 <th>Prix</th>
                 <th>Note</th>
                 <th>Reservation</th>
+                <th>Date</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{ commande.Prix }}</td>
                 <td>{{ commande.Note }}</td>
                 <td>{{ commande.Reservation }}</td>
+                <td>{{ commande.Date ? commande.Date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_commande_show', {'id': commande.id}) }}">show</a>
                     <a href="{{ path('app_commande_edit', {'id': commande.id}) }}">edit</a>
@@ -29,7 +31,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="6">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

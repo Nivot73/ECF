@@ -26,7 +26,9 @@
                 <td>{{ salle.Probleme }}</td>
                 <td>
                     <a href="{{ path('app_salle_show', {'id': salle.id}) }}">show</a>
-                    <a href="{{ path('app_salle_edit', {'id': salle.id}) }}">edit</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('app_film_edit', {'id': film.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
