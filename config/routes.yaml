@@ -2,13 +2,33 @@ Accueil:
   path: /
   controller: App\Controller\HomeController::index
 
-Commandes:
+Commande:
   path: /Commande
   controller: App\Controller\CommandeController::index
+
+Commande_Show:
+  path: /Commande/{id}
+  controller: App\Controller\CommandeController::show
 
 Cinema:
   path: /Cinema
   controller: App\Controller\CinemaController::index
+
+Cinema_Show:
+  path: /Cinema/{id}
+  controller: App\Controller\CinemaController::show
+  requirements:
+    id: '\d+'
+
+Salle:
+  path: /Salle
+  controller: App\Controller\SalleController::index
+
+Salle_Show:
+  path: /Salle/{id}
+  controller: App\Controller\SalleController::show
+  requirements:
+    id: '\d+'
 
 Film:
   path: /Film
@@ -17,5 +37,21 @@ Film:
 Film_Show:
   path: /Film/{id}
   controller: App\Controller\FilmController::show
+  requirements:
+    id: '\d+'
+
+User:
+  path: /User
+  controller: App\Controller\UserController::index
+
+Profile:
+  path: /Profile/{id}
+  controller: App\Controller\UserController::show
+  requirements:
+    id: '\d+'
+
+User_Remove:
+  path: /User/{id}/remove
+  controller: App\Controller\UserController::remove
   requirements:
     id: '\d+'

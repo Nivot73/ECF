@@ -15,4 +15,4 @@ class HomeController extends AbstractController
                 'number' => $number,
       ]);
     }
-  }
+}
