@@ -9,6 +9,12 @@ Commande:
 Commande_Show:
   path: /Commande/{id}
   controller: App\Controller\CommandeController::show
+  requirements:
+    id: '\d+'
+
+Commande_New:
+  path: /Commande/new
+  controller: App\Controller\CommandeController::new
 
 Cinema:
   path: /Cinema
@@ -40,6 +46,10 @@ Film_Show:
   requirements:
     id: '\d+'
 
+Film_New:
+  path: /Film/new
+  controller: App\Controller\FilmController::new
+
 User:
   path: /User
   controller: App\Controller\UserController::index
@@ -53,5 +63,15 @@ Profile:
 User_Remove:
   path: /User/{id}/remove
   controller: App\Controller\UserController::remove
+  requirements:
+    id: '\d+'
+
+Seance:
+  path: /Seance
+  controller: App\Controller\SeanceController::index
+
+Seance_Show:
+  path: /Seance/{id}
+  controller: App\Controller\SeanceController::show
   requirements:
     id: '\d+'

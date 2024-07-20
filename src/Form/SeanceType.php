@@ -2,29 +2,27 @@
 
 namespace App\Form;
 
-use App\Entity\Commande;
+use App\Entity\Seance;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CommandeType extends AbstractType
+class SeanceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('Prix')
-            ->add('Note')
-            ->add('Reservation')
-            ->add('Date')
-            // ->add('User')
-            ->add('Seance')
+            ->add('Caracteristique')
+            ->add('Film')
+            ->add('Salle')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Commande::class,
+            'data_class' => Seance::class,
         ]);
     }
 }
