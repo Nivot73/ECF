@@ -15,7 +15,7 @@
     </head>
     <body>
         {% block body %}
-            <h1>Votre numéro porte-bonheur est le {{ number }}</h1>
+            
             {% if app.user is not null %}
               <p> Votre id est le {{ app.user.id }} </p>
             {% endif %}
