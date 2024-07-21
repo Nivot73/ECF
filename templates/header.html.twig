@@ -1,5 +1,11 @@
 <navbar>
     <ul>
+        <li><a href="{{ path('app_login') }}">Connexion</a></li>
+        {% if app.user is not null %}
+        <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+        {% endif %}
+        <li><a href="{{ path('app_register') }}">Inscription</a></li>
+
         <li><a href="{{ path('app_home_index') }}">Accueil</a></li>
         <li><a href="{{ path('app_film_index') }}">Film</a></li>
         <li><a href="{{ path('app_cinema_index') }}">Cinema</a></li>
