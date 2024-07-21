@@ -3,6 +3,7 @@
 {% block title %}Edit Salle{% endblock %}
 
 {% block body %}
+{% include "header.html.twig" %}
     <h1>Edit Salle</h1>
 
     {{ include('salle/_form.html.twig', {'button_label': 'Update'}) }}

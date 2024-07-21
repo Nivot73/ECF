@@ -3,6 +3,7 @@
 {% block title %}Salle index{% endblock %}
 
 {% block body %}
+{% include "header.html.twig" %}
     <h1>Salle index</h1>
 
     <table class="table">
@@ -24,12 +25,12 @@
                 <td>{{ salle.Siege }}</td>
                 <td>{{ salle.Caracteristique }}</td>
                 <td>{{ salle.Probleme }}</td>
-                <td>
+                {# <td>
                     <a href="{{ path('app_salle_show', {'id': salle.id}) }}">show</a>
                     {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('app_film_edit', {'id': film.id}) }}">edit</a>
+                        <a href="{{ path('app_salle_edit', {'id': salle.id}) }}">edit</a>
                     {% endif %}
-                </td>
+                </td> #}
             </tr>
         {% else %}
             <tr>

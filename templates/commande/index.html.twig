@@ -3,6 +3,7 @@
 {% block title %}Commande index{% endblock %}
 
 {% block body %}
+{% include "header.html.twig" %}
     <h1>Commande index</h1>
 
     <table class="table">
@@ -26,7 +27,9 @@
                 <td>{{ commande.Date ? commande.Date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_commande_show', {'id': commande.id}) }}">show</a>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('app_commande_edit', {'id': commande.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}

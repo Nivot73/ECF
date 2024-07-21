@@ -3,6 +3,7 @@
 {% block title %}Cinema index{% endblock %}
 
 {% block body %}
+{% include "header.html.twig" %}
     <h1>Cinema index</h1>
 
     <table class="table">
@@ -22,7 +23,9 @@
                 <td>{{ cinema.Adresse }}</td>
                 {# <td>
                     <a href="{{ path('app_cinema_show', {'id': cinema.id}) }}">show</a>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('app_cinema_edit', {'id': cinema.id}) }}">edit</a>
+                    {% endif %}
                 </td> #}
             </tr>
         {% else %}

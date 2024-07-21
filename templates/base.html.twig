@@ -15,9 +15,13 @@
     </head>
     <body>
         {% block body %}
+        {% include "header.html.twig" %}
             
+            <p> Vous etes sur la page d'accueil </p>
             {% if app.user is not null %}
-              <p> Votre id est le {{ app.user.id }} </p>
+              <p> Vous etes connecté </p>
+            {% else %}
+              <p>Vous n'etes pas connecté</p>
             {% endif %}
         {% endblock %}
     </body>

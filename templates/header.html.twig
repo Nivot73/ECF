@@ -1,0 +1,14 @@
+<navbar>
+    <ul>
+        <li><a href="{{ path('app_home_index') }}">Accueil</a></li>
+        <li><a href="{{ path('app_film_index') }}">Film</a></li>
+        <li><a href="{{ path('app_cinema_index') }}">Cinema</a></li>
+
+        {% if app.user is not null %}
+        <li><a href="{{ path('app_commande_index') }}">Commande</a></li>
+        <li><a href="{{ path('app_seance_index') }}">Seance</a></li>
+        <li><a href="{{ path('app_user_show', {'id': app.user.id}) }}">Profile</a></li>
+        {% endif %}
+
+    </ul>
+</navbar>

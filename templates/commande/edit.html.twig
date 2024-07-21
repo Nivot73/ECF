@@ -3,6 +3,7 @@
 {% block title %}Edit Commande{% endblock %}
 
 {% block body %}
+{% include "header.html.twig" %}
     <h1>Edit Commande</h1>
 
     {{ include('commande/_form.html.twig', {'button_label': 'Update'}) }}

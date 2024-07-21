@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends AbstractController
 {
-    #[Route('/')]
+  #[Route('/', name: 'app_home_index', methods: ['GET'])]
     public function number() : Response
     {
       $number = rand(0, 100);

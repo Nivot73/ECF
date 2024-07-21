@@ -26,9 +26,11 @@ class CommandeController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $User = $this->getUser();
+        // $Seance = $_POST['Seance'];
 
         $commande = new Commande();
         $commande->setUser($User);
+        // $commande->setSeance($Seance);
         $form = $this->createForm(CommandeType::class, $commande);
         $form->handleRequest($request);
 

@@ -3,6 +3,7 @@
 {% block title %}Edit Cinema{% endblock %}
 
 {% block body %}
+{% include "header.html.twig" %}
     <h1>Edit Cinema</h1>
 
     {{ include('cinema/_form.html.twig', {'button_label': 'Update'}) }}
